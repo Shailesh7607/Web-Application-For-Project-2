@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title> profile update</title>
+
+   <!--  link to the css file  -->
+   <link rel="stylesheet" href="admin style.css">
+</head>
+<body>
+
+<!-- page to update the admin profile  -->
+
+<section class="form-container">
+
+   <form action="" method="POST">
+      <h3>update profile</h3>
+      <script>
+         function removeSpaces(input){ 
+            input.value = input.value.replace(/\s/g, '');
+         }
+      </script>
+      <input type="text" name="name" maxlength="20" class="box" oninput="removeSpaces(this)" placeholder=" enter your name">
+      <input type="password" name="old_pass" maxlength="20" class="box" oninput="emoveSpaces(this)" placeholder="enter your old password">
+      <input type="password" name="new_pass" maxlength="20" class="box" oninput="removeSpaces(this)" placeholder="enter your new password">
+       <input type="password" name="confirm_pass" maxlength="20" class="box"oninput="removeSpaces(this)" placeholder="confirm your new password">
+      <input type="submit" value="update now" name="submit" class="btn">
+   </form>
+
+</section>
+<!-- link to js file  -->
+<script src="admin.js"></script>
+</body>
+</html>

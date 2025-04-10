@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>products</title>
+
+   <!-- link to the css file -->
+   <link rel="stylesheet" href="admin style.css">
+</head>
+
+<body>
+<!-- product adding section -->
+<section class="add-products">
+
+   <form action="" method="POST" enctype="multipart/form-data">
+      <h3>add product</h3>
+      <input 
+      type="text" 
+      type="text" 
+      name="name" 
+      class="box" 
+      maxlength="100" 
+      placeholder="Enter product name" 
+      required>
+
+      <input 
+      type="number" 
+      name="price" 
+      class="box" 
+      placeholder="Enter product price" 
+      min="0" 
+      max="9999999999" 
+      required 
+      onkeypress="if(this.value.length == 10) return false;">
+
+      <select name="category" class="box" required>
+         <option value="" disabled selected>select category --</option>
+         <option value="Snack Pack">Snack Pack</option>
+         <option value="Momo">MoMo</option>
+         <option value="Chowmein">Chowmein</option>
+         <option value="Khaja Set">Khana Set</option>
+         <option value ="Kids Menu"> Kids Menu</option>
+         <option value = "Drinks"> Drinks </option>
+      </select>
+      <input 
+      type="file" 
+      name="image" 
+      class="box" 
+      accept="image/jpg, image/jpeg, image/png, image/webp" 
+      required>
+
+    <input 
+      type="submit" 
+      name="add_product" 
+      value="Add Product" 
+      class="btn">
+   </form>
+</section>
+
+<!-- link to the js file  -->
+<script src="admin.js"></script>
+</body>
+</html>
