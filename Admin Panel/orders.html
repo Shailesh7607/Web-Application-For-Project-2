@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>placed orders</title>
+
+   <!-- link to css file -->
+   <link rel="stylesheet" href="admin style.css">
+</head>
+
+<body>
+<!-- placed orders page -->
+<section class="placed-orders">
+   <h1 class="heading">placed orders</h1>
+
+   <div class="box-container">
+   <div class="box">
+      <p> user id: </p>
+      <p> name:  </p>
+      <p> email:</p>
+      <p> number: </p>
+      <p> total products: </p>
+      <p> total price: <span> $ </span> </p>
+      <form action="" method="POST">
+         <input type="hidden" name="order_id" value="?= $fetch_orders['id']; ?>">
+         <select name="payment_status" class="drop-down">
+            <option value="" selected disabled>select status</option>
+            <option value="pending">pending</option>
+            <option value="completed">completed</option>
+         </select>
+         <div class="flex-btn">
+            <input type="submit" name ="update_payment" value="update" class="btn">
+            <a href="orders.html" class="delete-btn" onclick="return confirm('delete this order?');">delete</a>
+         </div>
+      </form>
+   </div>
+   </div>
+
+</section>
+<!-- link to the js file  -->
+<script src="admin.js"></script>
+
+</body>
+</html>
