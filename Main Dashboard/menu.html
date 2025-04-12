@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canberra Momo House</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+   
+    <!-- Hover CSS -->
+    <link rel="stylesheet" href="css/hover-min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Navigation Section Start -->
+<header class="navbar">
+    <nav id="site-top-nav" class="navbar-menu navbar-fixed-top">
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html" title="Logo">
+                    <img src="img/logo.jpg" alt="Logo" class="img-responsive">
+                </a>
+            </div>
+            <!-- Menu -->
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Categories</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li class="cart-icon">
+                        <a id="shopping-cart" class="shopping-cart">
+                            <span>🛒(0)</span>
+                        </a>
+                        <div id="cart-content" class="cart-content">
+                            <h3 class="text-center">Shopping Cart</h3>
+                            <table class="cart-table" border="0">
+                                <tr>
+                                    <th>Food</th>
+                                    <th>Name</th>
+                                    <th>Price</th>
+                                    <th>Qty</th>
+                                    <th>Total</th>
+                                    <th>Action</th>
+                                </tr>
+                                <!-- Cart items will be dynamically added here -->
+                            </table>
+                            <a href="order.html" class="btn-primary">Confirm Order</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<!-- Navigation Section End -->
+
+  <!-- Food Search Section Start -->
+<section class="food-search text-center">
+    <div class="overlay"></div>
+    <div class="container">
+        <h2>Find Your Favorite Dish!</h2>
+        <ul class="food-search-highlights">
+            <li>🍴 Fresh and authentic Nepalese cuisine</li>
+            <li>🌟 Highly rated by food lovers</li>
+        </ul>
+        <form id="search-form">
+            <input id="search-input" type="search" placeholder="Search for food..." required>
+            <input type="submit" value="Search" class="btn-primary">
+        </form>
+    </div>
+</section>
+<!-- Food Search Section End -->
+
+ 
+
+  <!-- Foods Section Start -->
+<section class="food-menu">
+    <div class="container">
+        <h2 class="text-center">Food Menu</h2>
+        <div class="heading-border"></div>
+
+        <!-- Snack Pack Section -->
+        <div id="snack-pack" class="menu-section">
+            <h3>Snack Pack</h3>
+            <div class="grid-3">
+                <div class="food-menu-box">
+                    <form class="add-to-cart-form">
+                        <div class="food-menu-img">
+                            <img src="img/chatpate.jpg" alt="Chatpate Dry" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>Chatpate Dry</h4>
+                            <p class="food-price">$11.00</p>
+                            <p class="food-details">Crispy puffed rice with fresh vegetables and spices</p>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="food-menu-box">
+                    <form class="add-to-cart-form">
+                        <div class="food-menu-img">
+                            <img src="img/laphing.jpg" alt="Laphing Dry" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>Laphing Dry</h4>
+                            <p class="food-price">$15.00</p>
+                            <p class="food-details">A Crispy mix of lentils , noodles and spices.</p>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="food-menu-box">
+                    <form class="add-to-cart-form">
+                        <div class="food-menu-img">
+                            <img src="img/nimkin.jpg" alt="Aalu Nimkin" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>Aalu Nimkin</h4>
+                            <p class="food-price">$13.00</p>
+                            <p class="food-details">Crispy nimki with the spicy potato gravy.</p>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Momo Section -->
+        <div id="momo" class="menu-section">
+            <h3>Momo</h3>
+            <div class="grid-3">
+                <div class="food-menu-box">
+                    <form class="add-to-cart-form">
+                        <div class="food-menu-img">
+                            <img src="img/soup.jpg" alt="chicken Momo" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>Chicken Momo (soup)</h4>
+                            <p class="food-price">$12.00</p>
+                            <p class="food-details">Steamed dumplings with veggies and chicken soup.</p>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="food-menu-box">
+                    <form class="add-to-cart-form">
+                        <div class="food-menu-img">
+                            <img src="img/steammomo.jpg" alt="steam Momo" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>Steam Momo</h4>
+                            <p class="food-price">$16.00</p>
+                            <p class="food-details">Spicy chicken-filled dumplings.</p>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="food-menu-box">
+                    <form class="add-to-cart-form">
+                        <div class="food-menu-img">
+                            <img src="img/friedmomo.jpeg" alt="fried chicken Momo" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>Fried Chicken Momo</h4>
+                            <p class="food-price">$18.00</p>
+                            <p class="food-details"> pan fried  dumplings with chicken filled .</p>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chowmein Section -->
+        <div id="chowmein" class="menu-section">
+            <h3>Chowmein</h3>
+            <div class="grid-3">
+                <div class="food-menu-box">
+                    <form class="add-to-cart-form">
+                        <div class="food-menu-img">
+                            <img src="img/Chicken Ch.JPG" alt="Chicken Chowmein" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>Chicken Chowmein</h4>
+                            <p class="food-price">$16.99</p>
+                            <p class="food-details">Stir-fried noodles with chicken.</p>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="food-menu-box">
+                    <form class="add-to-cart-form">
+                        <div class="food-menu-img">
+                            <img src="img/veg chowmein.jpg" alt="Veg Chowmein" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>Veg Chowmein</h4>
+                            <p class="food-price">$15.99</p>
+                            <p class="food-details">Noodles with fresh vegetables.</p>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Khanaset Section -->
+        <div id="khanaset" class="menu-section">
+            <h3>Khanaset</h3>
+            <div class="grid-3">
+                <div class="food-menu-box">
+                    <form class="add-to-cart-form">
+                        <div class="food-menu-img">
+                            <img src="img/choila.jpeg" alt="Choila Khanaset" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>Choila Khanaset</h4>
+                            <p class="food-price">$25.00</p>
+                            <p class="food-details">Traditional Nepali platter.</p>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="food-menu-box">
+                    <form class="add-to-cart-form">
+                        <div class="food-menu-img">
+                            <img src="img/goatkhanaset.jpeg" alt="Goat Bhutan Khanaset" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>Goat Bhutan  Khanaset</h4>
+                            <p class="food-price">$26.00</p>
+                            <p class="food-details">Authentic Nepali feast with the blend of goat meat.</p>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Drinks Section -->
+        <div id="drinks" class="menu-section">
+            <h3>Drinks</h3>
+            <div class="grid-3">
+                <div class="food-menu-box">
+                    <form class="add-to-cart-form">
+                        <div class="food-menu-img">
+                            <img src="img/mangolassi.jpg" alt="Mango Lassi" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>Mango Lassi</h4>
+                            <p class="food-price">$8.00</p>
+                            <p class="food-details">Creamy mango yogurt drink.</p>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="food-menu-box">
+                    <form class="add-to-cart-form">
+                        <div class="food-menu-img">
+                            <img src="img/Soft drinks.jpg" alt="Soft drink" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>Soft drinks</h4>
+                            <p class="food-price">$4.00</p>
+                            <p class="food-details"> Cold drinks.</p>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="food-menu-box">
+                    <form class="add-to-cart-form">
+                        <div class="food-menu-img">
+                            <img src="img/Watermelon.jpg" alt="Watermelon Juice" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>Watermelon Juice</h4>
+                            <p class="food-price">$7.50</p>
+                            <p class="food-details">Refreshing watermelon drink.</p>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+                <div class="food-menu-box">
+                    <form class="add-to-cart-form">
+                        <div class="food-menu-img">
+                            <img src="img/beer.jpeg" alt="Beer" class="img-responsive img-curve">
+                        </div>
+                        <div class="food-menu-desc">
+                            <h4>Beer</h4>
+                            <p class="food-price">$9.00</p>
+                            <p class="food-details">Chilled refreshing beer.</p>
+                            <input type="number" class="quantity-input" value="1" min="1">
+                            <input type="submit" class="btn-primary" value="Add To Cart">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Foods Section End -->
+
+    <!-- Footer Section Start -->
+    <section class="footer">
+        <div class="container">
+            <div class="grid-3">
+                <div class="footer-item text-center">
+                    <h3>About Us</h3>
+                    <p>Savor the taste of excellence with every bite. We bring you the finest culinary delights, crafted with passion and delivered with care.</p>
+                </div>
+                <div class="footer-item text-center">
+                    <h3>Site Map</h3>
+                    <div class="site-links">
+                        <a href="index.html">Home</a>
+                        <a href="menu.html">Categories</a>
+        
+                        <a href="contact.html">Contact</a>
+                        <a href="login.html">Login</a>
+                    </div>
+                </div>
+                <div class="footer-item text-center">
+                    <h3>Contact Us</h3>
+                    <div class="social-links">
+                        <ul>
+                            <li><a href="#"><img src="https://img.icons8.com/color/48/null/facebook-new.png" alt="Facebook"/></a></li>
+                            <li><a href="#"><img src="https://img.icons8.com/fluency/48/null/instagram-new.png" alt="Instagram"/></a></li>
+                        </ul>
+                    </div>
+                    <div class="contact-details">
+                        <p>Contact: <span>0462413853</span></p>
+                        <p>Email: <a href="mailto:canberramomohouse@gmail.com">canberramomohouse@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <p>All rights reserved © 2025 <a href="#">Group 1</a></p>
+            </div>
+        </div>
+    </section>
+    <!-- Footer Section End -->
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!-- Jquery UI -->
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <!-- Custom JS -->
+    <script src="js/custom.js"></script>
+</body>
+</html>
