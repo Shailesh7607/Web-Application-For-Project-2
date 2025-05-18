@@ -1,0 +1,102 @@
+CREATE DATABASE IF NOT EXISTS canberra_momo_house;
+USE canberra_momo_house;
+
+-- Users Table (for both customers and admins)
+CREATE TABLE Users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    address TEXT,
+    user_type ENUM('customer', 'admin') DEFAULT 'customer'
+);
+
+-- Products Table
+CREATE TABLE Products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    category VARCHAR(100) NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    image VARCHAR(255),
+    availability BOOLEAN DEFAULT TRUE
+);
+
+-- Cart Table
+CREATE TABLE Cart (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    product_id INT,
+    quantity INT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES Users(id),
+    FOREIGN KEY (product_id) REFERENCES Products(id)
+);
+
+-- Orders Table (updated with customer_name)
+CREATE TABLE Orders (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    total DECIMAL(10, 2) NOT NULL,
+    status ENUM('pending', 'completed', 'cancelled') DEFAULT 'pending',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    pickup_time TIME NOT NULL,
+    is_now BOOLEAN DEFAULT FALSE,
+    customer_name VARCHAR(255) NOT NULL, -- Added to store customer name
+    FOREIGN KEY (user_id) REFERENCES Users(id)
+);
+
+-- Order_Items Table
+CREATE TABLE Order_Items (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    order_id INT,
+    product_id INT,
+    quantity INT NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    FOREIGN KEY (order_id) REFERENCES Orders(id),
+    FOREIGN KEY (product_id) REFERENCES Products(id)
+);
+
+-- Payment Table
+CREATE TABLE Payment (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    order_id INT,
+    amount DECIMAL(10, 2) NOT NULL,
+    payment_method VARCHAR(100),
+    status ENUM('pending', 'completed', 'failed') DEFAULT 'pending',
+    stripe_payment_id VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (order_id) REFERENCES Orders(id)
+);
+
+-- Messages Table
+CREATE TABLE Messages (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    phone VARCHAR(20) NOT NULL,
+    number VARCHAR(20),
+    subject VARCHAR(255) NOT NULL,
+    message TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Insert sample products
+INSERT INTO Products (name, category, price, image, availability) VALUES
+('Chatpate Dry', 'Snack Pack', 11.00, 'img/chatpate.jpg', TRUE),
+('Laphing Dry', 'Snack Pack', 15.00, 'img/laphing.jpg', TRUE),
+('Aalu Nimkin', 'Snack Pack', 13.00, 'img/nimkin.jpg', TRUE),
+('Chicken Momo (soup)', 'Momo', 12.00, 'img/soup.jpg', TRUE),
+('Steam Momo', 'Momo', 16.00, 'img/steammomo.jpg', TRUE),
+('Fried Chicken Momo', 'Momo', 18.00, 'img/friedmomo.jpeg', TRUE),
+('Chicken Chowmein', 'Chowmein', 16.99, 'img/Chicken Ch.JPG', TRUE),
+('Veg Chowmein', 'Chowmein', 15.99, 'img/veg chowmein.jpg', TRUE),
+('Choila Khanaset', 'Khaja Set', 25.00, 'img/choila.jpeg', TRUE),
+('Goat Bhutan Khanaset', 'Khaja Set', 26.00, 'img/goatkhanaset.jpeg', TRUE),
+('Mango Lassi', 'Drinks', 8.00, 'img/mangolassi.jpg', TRUE),
+('Soft drinks', 'Drinks', 4.00, 'img/Soft drinks.jpg', TRUE),
+('Watermelon Juice', 'Drinks', 7.50, 'img/Watermelon.jpg', TRUE),
+('Beer', 'Drinks', 9.00, 'img/beer.jpeg', TRUE);
+
+-- Insert sample admin user (password: admin123)
+INSERT INTO Users (name, email, phone, password, user_type) VALUES
+('Admin User', 'admin@canberramomohouse.com', '0462413853', '$2y$10$lBDaQcb11ctjfzOpy1Zq0uADNarVzcTBoymJF.CE1MI98AU.u0xtm', 'admin');
